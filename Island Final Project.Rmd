@@ -83,7 +83,7 @@ summary_stats <- summary_stats %>%
 # Print the updated summary table with the difference in sprint times and their confidence intervals
 print(summary_stats)
 ```
-*Table 1. Descriptive statistics for sprint time at days 0 and 14 for the control and keto groups. Values represent the mean, standard deviation (SD), sample size (N), and 95% confidence intervals (CI).*
+*Table 1: Descriptive statistics for sprint time at days 0 and 14 for the control and keto groups. Values represent the mean, standard deviation (SD), sample size (N), and 95% confidence intervals (CI).*
 
 Descriptive statistics for sprint time before and after the intervention are summarized in Table 1. The control group had a mean day 0 sprint time of 19.31 ± 3.89 seconds, which increased slightly to a mean of 19.82 ± 4.15 seconds after 14 days. Similarly, the keto group had an initial sprint time of 20.02 ± 5.14 seconds, rising to 20.30 ± 5.25 seconds post-intervention. These changes suggest a small increase in sprint time, implying a slight decrease in sprint performance for both groups over the study period.
 
@@ -126,7 +126,7 @@ ggplot(summary_stats, aes(x = treatment, y = Mean_Post, fill = treatment)) +
   values = c("Control" = "slategray2", 
              "Keto" = "lightseagreen"))
 ```
-Then to further assess changes, bar plots with 95% confidence intervals (CIs) for mean sprint times pre- and post-intervention are presented in Figures 3 and 4. The overlap in confidence intervals suggests that the mean sprint time changes were not statistically significant, reinforcing the lack of a meaningful effect from the intervention.
+Then to further assess changes, bar plots with 95% confidence intervals (indicated by black error bars) for mean sprint times pre- and post-intervention are presented in Figures 3 and 4. The overlap in confidence intervals suggests that the mean sprint time changes were not statistically significant, reinforcing the lack of a meaningful effect from the intervention.
 
 ```{r}
 # One-sided t-test for Control Group (Day 0 vs Day 14)
@@ -164,11 +164,11 @@ test_results <- data.frame(
 # Print the summary table
 print(test_results)
 ```
-*Table 2.Results of One-sided and Independent t-tests on Sprint Time Changes*
+*Table 2: Results of One Sample and Independent t-tests on Sprint Time Changes*
 
-Moreover, statistical analyses were conducted using paired and independent t-tests. The one-sided t-test for the control group yielded a significant result (p = 0.0014), indicating a meaningful change in sprint time. However, this change was an increase in sprint time rather than an improvement in performance. In contrast, the one-sided t-test for the keto group was not significant (p = 0.097), suggesting no meaningful change in sprint performance. The independent t-test comparing sprint time differences between groups also resulted in a non-significant finding (p = 0.292), indicating no substantial difference between the control and keto groups in terms of sprint performance changes.
+Moreover, statistical analyses were conducted using one sample and independent t-tests. The one sample t-test for the control group yielded a significant result (p = 0.0014), indicating a meaningful change in sprint time. However, this change was an increase in sprint time rather than an improvement in performance. In contrast, the one sample t-test for the keto group was not significant (p = 0.097), suggesting no meaningful change in sprint performance. The independent t-test comparing sprint time differences between groups also resulted in a non-significant finding (p = 0.292), indicating no substantial difference between the control and keto groups in terms of sprint performance changes.
 
-The validity of these inference procedures was assessed by checking assumptions of normality, homogeneity of variance, and independence. Given the relatively large sample size (n = 27 for control, n = 53 for keto), the Central Limit Theorem supports the assumption of normality. Boxplots further suggest that the distributions do not exhibit severe skewness or extreme outliers. Homogeneity of variance was reasonably satisfied based on the similar spread observed in the boxplots. Additionally, the independence condition for the independent t-test was met, as the control and keto groups consisted of distinct, non-overlapping participants, ensuring no relationship between observations in the two groups.
+The validity of these inference procedures was assessed by checking assumptions of normality, homogeneity of variance, and independence. Given the relatively large sample size (n = 27 for control, n = 53 for keto), we can assume that the Central Limit Theorem supports the assumption of normality (supplemental normal Q-Q plots for each group are included in Appendix A). Boxplots further suggest that the distributions do not exhibit severe skew or extreme outliers. Homogeneity of variance was reasonably satisfied based on the similar spread observed in the boxplots. Additionally, the independence condition for the independent t-test was met, as the control and keto groups consisted of distinct, non-overlapping participants, ensuring no relationship between observations in the two groups.
 
 Overall, the results suggest that a two-week ketogenic diet did not have a meaningful impact on sprint time. The observed changes in sprint performance were minimal and did not favor either group. These findings indicate that short-term dietary changes alone may not be sufficient to elicit measurable improvements in sprint performance. Future research could explore longer interventions or different exercise modalities to assess whether more substantial effects on sprint performance can be achieved. Additionally, studies investigating other factors such as training volume or individual response to diet might provide further insight into how diet influences sprint performance.
 
@@ -196,7 +196,7 @@ descriptive_stats <- island_data %>%
 
 print(descriptive_stats)
 ```
-*Table 3: Descriptive statistics for respiratory rate at days 0 and 14 for both keto and control groups. Mean, standard deviation (SD), standard error (SE), and 95% confidence intervals, including both upper and lower limits,  are shown.*
+*Table 3: Descriptive statistics for respiratory rate at days 0 and 14 for both keto and control groups. Mean, standard deviation (SD), standard error (SE), and 95% confidence intervals, including both upper and lower limits, are shown.*
 
 The descriptive summary revealed similar baseline respiratory rates across both groups. On day 0, the control group had a mean respiratory rate of 31.200 breaths/min (SD = 3.520), while the Keto group averaged 31.113 breaths/min (SD = 4.010). After 14 days, the Control group's mean decreased slightly to 30.296 (SD = 4.949), and the Keto group to 30.679 (SD = 4.132). The 95% confidence intervals also showed considerable overlap: Control: Day 0 CI [29.846, 32.554], Day 14 CI [28.336, 32.256]; Keto: Day 0 CI [30.011, 32.215], Day 14 CI [29.544, 31.813]. These statistics suggest no meaningful change in average respiratory rate in either group over the intervention period.
 
@@ -211,7 +211,7 @@ both control and keto groups", x= "Group", y= "Respiratory Rate(breath/min)")+
   theme_minimal()+
   scale_fill_manual(name= "Treatment", values = c("Control" = "grey", "Keto" = "lightblue"))
 ```
-The baseline distributions are highly comparable in Fig 5. The medians for both groups are centered near 31 breaths/min, with the interquartile ranges spanning roughly 28 to 34. This suggests similar starting points for both groups in terms of post-sprint respiratory rate. Both groups also exhibit a small number of lower outliers, but these are symmetrically balanced and not extreme enough to skew the central tendency.
+The baseline distributions are highly comparable in Figure 5. The medians for both groups are centered near 31 breaths/min, with the interquartile ranges spanning roughly 28 to 34. This suggests similar starting points for both groups in terms of post-sprint respiratory rate. Both groups also exhibit a small number of lower outliers, but these are symmetrically balanced and not extreme enough to skew the central tendency.
 
 ```{r}
 ggplot(island_data, aes(x=treatment, y= day_14_resp, fill= treatment)) +
@@ -223,7 +223,7 @@ both control and keto groups", x= "Group", y= "Respiratory Rate(breath/min)")+
   scale_fill_manual(name= "Treatment", values = c("Control" = "grey", "Keto" = "lightblue"))
 
 ```
-In Fig 6 the post-intervention data has a minimal visual change. The Control group maintains a similar distribution, with the median decreasing slightly. The Keto group also shows a subtle drop in the median but more notably exhibits a slightly narrower interquartile range, suggesting reduced variability. This narrowing could hint at more consistent responses to the ketogenic diet; however, this observation remains hypothetical since it was not supported by statistical significance in the t-tests performed later.
+In Figure 6 the post-intervention data has a minimal visual change. The Control group maintains a similar distribution, with the median decreasing slightly. The Keto group also shows a subtle drop in the median but more notably exhibits a slightly narrower interquartile range, suggesting reduced variability. This narrowing could hint at more consistent responses to the ketogenic diet; however, this observation remains hypothetical since it was not supported by statistical significance in the t-tests performed later.
 ```{r}
 
 summary_bar <- descriptive_stats %>%
@@ -281,11 +281,11 @@ test_results <- data.frame(
 print(test_results)
 
 ```
-*Table 4: Results of Paired and Independent t-tests on Respiratory Rate Changes*
+*Table 4: Results of One Sample and Independent t-tests on Respiratory Rate Changes*
 
 To formally assess whether the ketogenic diet influenced respiratory rate, both within-group and between-group hypothesis tests were conducted. 
 
-For within-group analysis, one-sided t-tests evaluated changes in respiratory rate from Day 0 to Day 14 for each treatment group. In the Control group, the mean change was –0.852 breaths/min, i.e., a slight reduction, with a p-value of 0.462. In the Keto group, the mean change was –0.434 breaths/min, with a p-value of 0.531. Both p-values are well above the conventional significance level of 0.05, indicating that these changes are not statistically significant and could easily be attributed to random variation. In other words, we fail to reject the null hypothesis (H0: mean_Day0 = mean_Day14) for both groups, concluding there is no sufficient evidence of a meaningful change in respiratory rate over time. 
+For within-group analysis, one sample t-tests evaluated changes in respiratory rate from Day 0 to Day 14 for each treatment group. In the Control group, the mean change was –0.852 breaths/min, i.e., a slight reduction, with a p-value of 0.462. In the Keto group, the mean change was –0.434 breaths/min, with a p-value of 0.531. Both p-values are well above the conventional significance level of 0.05, indicating that these changes are not statistically significant and could easily be attributed to random variation. In other words, we fail to reject the null hypothesis (H0: mean_Day0 = mean_Day14) for both groups, concluding there is no sufficient evidence of a meaningful change in respiratory rate over time. 
 
 To evaluate whether the ketogenic diet produced a different effect than no intervention, an independent t-test was conducted on the difference scores (mean_diff = Day14 – Day0). The mean difference between the Keto and Control groups was +0.418 breaths/min, suggesting a slightly smaller drop in respiratory rate in the Keto group. However, this difference was not statistically significant (p = 0.755), and again we fail to reject the null hypothesis (H0: mean_diff_Keto = mean_diff_Control).
 
@@ -329,7 +329,7 @@ Across all study participants, no change in post-sprint vocal pitch was observed
 
 ## Conclusion
 
-This study sought to explore the consequences of a ketogenic diet on one's ability to partake in anaerobic exercise, measuring performance and physical stress. Statistical analysis yielded no significant decline in sprint performance between those partaking in a ketogenic diet and the control group (p = 0.292). Analysis on respiratory rate post-sprint between control and treatment groups also yielded insignificant results (p = 0.755). Among all participants, no changes were observed in post-sprint skin coloration or vocal pitch/loudness between days 0 and 14. The results from this study lead us to conclude that shifting to the use of lipid stores for energy (as experienced in the ketogenic diet) does not significantly affect performance in or recovery following anaerobic 
+This study sought to explore the consequences of a ketogenic diet on one's ability to partake in anaerobic exercise, measuring performance and physical stress. Statistical analysis yielded no significant decline in sprint performance between those partaking in a ketogenic diet and the control group (p = 0.292). Analysis on respiratory rate post-sprint between control and treatment groups also yielded insignificant results (p = 0.755). Among all participants, no changes were observed in post-sprint skin coloration or vocal pitch/loudness between days 0 and 14. The results from this study lead us to conclude that shifting to the use of lipid stores for energy (as experienced in the ketogenic diet) does not significantly affect performance in or recovery following anaerobic exercise.
 
 ## Discussion
 
@@ -398,8 +398,10 @@ Zraick, R. I., Kempster, G. B., Connor, N. P., Thibeault, S., Klaben, B. K., Bur
 ## Appendix
 
 *Appendix - A*
+
+Normal Q-Q plots (within groups) for sprint time:
 ```{r}
-# Normal Q-Q plot and t-tests for sprint time
+# Normal Q-Q plots for sprint time
 
 data=data%>%
   mutate(change_sprint=day_14_sprint-day_0_sprint)
@@ -417,16 +419,11 @@ data%>%
   stat_qq()+
   stat_qq_line()+
   labs(x="Theoretical Quantiles",y="Sample Quantiles")
-
-t.test(data$change_sprint[data$treatment=="Control"])
-
-t.test(data$change_sprint[data$treatment=="Keto"])
-
-t.test(data$change_sprint[data$treatment=="Control"],data$change_sprint[data$treatment=="Keto"])
 ```
 
+Normal Q-Q plots (within groups) for respiratory rate:
 ```{r}
-# Normal Q-Q plot and t-tests for respiratory rate
+# Normal Q-Q plots for respiratory rate
 data=data%>%
   mutate(change_resp=day_14_resp-day_0_resp)
 
@@ -443,14 +440,8 @@ data%>%
   stat_qq()+
   stat_qq_line()+
   labs(x="Theoretical Quantiles",y="Sample Quantiles")
-
-t.test(data$change_resp[data$treatment=="Control"])
-
-t.test(data$change_resp[data$treatment=="Keto"])
-
-t.test(data$change_resp[data$treatment=="Control"],data$change_resp[data$treatment=="Keto"])
 ```
-
+Two-way tables summarizing post-sprint vocal loudness within and between groups:
 ```{r}
 # Vocal loudness summaries
 
